@@ -50,8 +50,8 @@ router.get('/:id', (req, res) => {
       }
     ]
   }).then(tagData => {
-    if ('tagData') {
-      res.status(404).json({ message: 'no tage found with id, bruv' });
+    if (!tagData) {
+      res.status(404).json({ message: 'no tag found with id, bruv' });
       return;
     }
     res.json(tagData);
